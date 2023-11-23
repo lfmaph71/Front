@@ -23,7 +23,7 @@ const editarUsuario = (params) => {
   return (
     <div>
       <div className='mx-auto' style={{ width: '400px' }}>
-        <h1>Editar Usuarios</h1>
+         <h1>Editar Usuarios</h1>
       </div>
       <br />
       <div className="container">
