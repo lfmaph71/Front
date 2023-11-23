@@ -22,6 +22,10 @@ const editarUsuario = (params) => {
 
   return (
     <div>
+      <div className='mx-auto' style={{ width: '400px' }}>
+        <h1>Editar Usuarios</h1>
+      </div>
+      <br />
       <div className="container">
         <div className="row align-items-center">
           <div className="col-4">
