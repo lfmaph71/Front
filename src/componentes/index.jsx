@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { sendRequest } from './funciones'
+import React, { useEffect, useState} from 'react';
+import { Link, useParams} from 'react-router-dom';
+import { sendRequest } from './funciones';
 
 const ListaUsuarios = (params) => {
   const [data, setData] = useState(null);
@@ -10,10 +10,7 @@ const ListaUsuarios = (params) => {
 
   const getUsuarios = async () => {
     let res = await sendRequest('GET', {}, '/api/Usuarios/ListarUsuarios', '');
-    //console.log(res);
-    //setListUsuarios(res);
     setData(res);
-    //console.log(data);
   }
   return (
     <div>
@@ -27,11 +24,8 @@ const ListaUsuarios = (params) => {
           </div>
         </div>
       </div>
-
       <br />
-
       <div className="container">
-
         <table className='table'>
           <thead>
             <tr>

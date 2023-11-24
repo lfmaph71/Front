@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { sendRequest } from './funciones';
-import { useParams } from 'react-router-dom';
 
-
-const editarUsuario = (params) => {
-  const { id } = useParams();
+const editarUsuario = () => {
+  let { idUsuario } = useParams();
+  //console.log('params:',idUsuario);
   const [nombres, setNombres] = useState('');
   const [correo, setCorreo] = useState('');
   const [edad, setEdad] = useState('');
-  const [datausu, setDataUsu] = useState(null)
-  const [datos, setDatos] = useState(null);
-  useEffect(() => {
+  const [datos,setDatos] = useState(null);
+
+  useEffect(()=>{
     getUsuarios();
-  }, []);
+  },[]);
 
   const getUsuarios = async () => {
-    let res = await sendRequest('GET', {}, '/api/Usuarios/ListarUsuariosId/' + 7, '');
-    setDatos(res);
-    console.log(datos);
+    let res = await sendRequest('GET', {}, `/api/Usuarios/ListarUsuariosId/${idUsuario}`, '')
+    setDatos(res)
+    console.log(res)
+    console.log(datos)
   }
 
   return (
@@ -45,7 +46,7 @@ const editarUsuario = (params) => {
           </div>
         </div>
         <br />
-        <div class="mb-3">
+        <div className="mb-3">
           <button className="btn btn-success" type="button"  >Guardar</button>
           <button className="btn btn-secondary m-2">Regresar</button>
         </div>
