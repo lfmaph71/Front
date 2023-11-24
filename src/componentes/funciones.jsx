@@ -14,12 +14,11 @@ export const sendRequest = async(method,params,url,redir='')=>{
         data:params
     }).then(Response=>{
         res = Response.data;
-        //console.log(res);
     }).catch((errors)=>{
         let desc;
-        res = errors.Response.data,
-        errors.Response.data.errors.map((e)=>{desc = desc + ' ' + e})
-        alerta(desc,'error')
+        res = errors.response.data,
+        errors.response.data.errors.map((e)=>{desc = desc + ' ' + e})
+        alerta(desc.data,'error')
     })
     return res;
 }

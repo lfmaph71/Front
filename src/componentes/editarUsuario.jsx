@@ -36,7 +36,7 @@ const editarUsuario = () => {
           <div className="col-4">
             <label className="form-label">Nombres</label>
             <input className="form-control" type="text" id='txtNombre' value={nombreUsuario}
-              onChange={(e) => setNombreUsuario(e.target.value)} />
+              onChange={(e) => setNombreUsuario(e.target.value)} required />
           </div>
           <div className="col-4">
             <label className="form-label">Correo Electronico</label>
