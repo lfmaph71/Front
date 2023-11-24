@@ -9,7 +9,7 @@ const crearUsuario = () => {
 
   const grabar = async () => {
     let res = await sendRequest("POST", { nombres: nombres, correo: correo, edad: edad }, '/api/Usuarios/CrearUsuarios', '');
-    window.location.href = '/index'
+    window.location.href = '/index';
   }
 
   return (
